@@ -1,50 +1,3 @@
-// #include <stdio.h>
-// #include "Binary_Search/binarySearch.h"
-
-// int targetElement();
-// int binarySearch(int arr[], int size, int userInput);
-
-// int main(void)
-// {
-//     int arr[] = {1, 2, 3, 4, 5};
-//     int size = sizeof(arr) / sizeof(arr[0]);
-
-//     printf("The original array is: ");
-//     for (int i = 0; i < size; i++)
-//     {
-//         printf("%d ", arr[i]);
-//     }
-//     printf("\n");
-
-//     // Ask for target element
-//     int userInput = targetElement();
-
-//     // Binary Search result
-//     int result = binarySearch(arr, size, userInput);
-
-//     if (result != -1)
-//     {
-//         printf("Using Binary Search, your element %d was found at index %d.\n", userInput, result);
-//     }
-//     else
-//     {
-//         printf("Element %d was not found in the array.\n", userInput);
-//     }
-
-//     return 0;
-// }
-
-
-// // target element
-// int targetElement()
-// {
-//     int target;
-//     printf("Enter an element you want to search: ");
-//     scanf("%d", &target);
-//     return target;
-// }
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -82,19 +35,41 @@ int main(void)
     }
     printf("\n");
 
-    clock_t start = clock();
+    clock_t start_sort = clock();
     
     // Sort the array using merge sort
     mergeSort(arr, 0, size - 1);
 
-    clock_t end = clock();
+    clock_t end_sort = clock();
+    
 
-    double time_taken = ((double) (end - start)) / CLOCKS_PER_SEC * 1000;
+    double time_taken_merge = ((double) (end_sort - start_sort)) / CLOCKS_PER_SEC * 1000;
 
     printf("The sorted array is: ");
     printArray(arr,size);
 
-    printf("\nTime taken to sort the array was %f \n", time_taken);
+    printf("\nTime taken to sort the array was %f seconds\n", time_taken_merge);
+
+    int userInput = targetElement();
+
+    clock_t start_search = clock();
+    
+    // Search for an element using Binary Search
+    int result = binarySearch(arr, size, userInput);
+
+    clock_t end_search = clock();
+
+    double time_taken_Binary = ((double) (end_search - start_search)) / CLOCKS_PER_SEC * 1000;
+    
+    printf("\nTime taken to search the element was %f seconds\n", time_taken_Binary);
+
+
+    if(result != -1){
+        printf("Using Binary Search, your element %d was found at index %d. \n", userInput, result);
+    }
+    else{
+        printf("Element %d was not found in the array. \n", userInput);
+    }
 
     free(arr);
 
