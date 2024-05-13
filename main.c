@@ -28,34 +28,63 @@ int main(void)
     srand(time(NULL));
 
     // Generate random numbers and fill the array
-    printf("Generated array: ");
+    // printf("Generated array: ");
     for(int i = 0; i < size; i++){
         arr[i] = rand() % 100;
-        printf("%d ", arr[i]);
+        // printf("%d ", arr[i]);
     }
     printf("\n");
 
-    clock_t start_sort = clock();
-    
-    // Sort the array using merge sort
-    mergeSort(arr, 0, size - 1);
+    int sortingChoice;
+    printf("Choose sorting algorithm -\n");
+    printf("1. Merge Sort\n");
+    printf("Enter your choice of algorithm: ");
+    scanf("%d", &sortingChoice);
 
+    clock_t start_sort = clock();
+    switch (sortingChoice){
+        case 1:
+            // Sort the array using merge sort
+            mergeSort(arr, 0, size - 1);
+            break;
+        default:
+            printf("Invalid choice for sorting algorithm.\n");
+            free(arr);
+            return 1;
+    }
+    
     clock_t end_sort = clock();
     
 
     double time_taken_merge = ((double) (end_sort - start_sort)) / CLOCKS_PER_SEC * 1000;
 
-    printf("The sorted array is: ");
-    printArray(arr,size);
+    // printf("The sorted array is: ");
+    // printArray(arr,size);
 
     printf("\nTime taken to sort the array was %f seconds\n", time_taken_merge);
+
+    int searchChoice;
+    printf("Choose searching algorithm:\n");
+    printf("1. Binary Search\n");
+    printf("Enter your choice: ");
+    scanf("%d", &searchChoice);
 
     int userInput = targetElement();
 
     clock_t start_search = clock();
-    
-    // Search for an element using Binary Search
-    int result = binarySearch(arr, size, userInput);
+    int result;
+
+    switch (searchChoice) {
+        case 1:
+            // Search for an element using Binary Search
+            result = binarySearch(arr, size, userInput);
+            break;
+        default:
+            printf("Invalid choice for searching algorithm.\n");
+            free(arr);
+            return 1;
+    }
+
 
     clock_t end_search = clock();
 
