@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "binarySearch.h"
+#include "Binary_Search/binarySearch.h"
 
 int targetElement();
 int binarySearch(int arr[], int size, int userInput);
