@@ -56,7 +56,7 @@ int main(void)
     clock_t end_sort = clock();
     
 
-    double time_taken_merge = ((double) (end_sort - start_sort)) / CLOCKS_PER_SEC * 1000;
+    double time_taken_merge = ((double) (end_sort - start_sort)) / CLOCKS_PER_SEC;
 
     printf("The sorted array is: ");
     printArray(arr,size);
@@ -88,7 +88,7 @@ int main(void)
 
     clock_t end_search = clock();
 
-    double time_taken_Binary = ((double) (end_search - start_search)) / CLOCKS_PER_SEC * 1000;
+    double time_taken_Binary = ((double) (end_search - start_search)) / CLOCKS_PER_SEC;
     
     printf("\nTime taken to search the element was %f seconds\n", time_taken_Binary);
 
