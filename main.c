@@ -28,10 +28,10 @@ int main(void)
     srand(time(NULL));
 
     // Generate random numbers and fill the array
-    // printf("Generated array: ");
+    printf("Generated array: ");
     for(int i = 0; i < size; i++){
         arr[i] = rand() % 100;
-        // printf("%d ", arr[i]);
+        printf("%d ", arr[i]);
     }
     printf("\n");
 
@@ -58,8 +58,8 @@ int main(void)
 
     double time_taken_merge = ((double) (end_sort - start_sort)) / CLOCKS_PER_SEC * 1000;
 
-    // printf("The sorted array is: ");
-    // printArray(arr,size);
+    printf("The sorted array is: ");
+    printArray(arr,size);
 
     printf("\nTime taken to sort the array was %f seconds\n", time_taken_merge);
 
