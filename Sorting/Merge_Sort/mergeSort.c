@@ -1,10 +1,9 @@
-// Merge
 void merge(int arr[], int left, int mid, int right){
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
     int L[n1], R[n2];
-    
+
     for(int i = 0; i < n1; i++){
         L[i] = arr[left + i];
     }
@@ -30,7 +29,7 @@ void merge(int arr[], int left, int mid, int right){
         i++;
         k++;
     }
-    
+
     while(j < n2){
         arr[k] = R[j];
         j++;
@@ -38,7 +37,6 @@ void merge(int arr[], int left, int mid, int right){
     }
 }
 
-// Merge Sort
 void mergeSort(int arr[], int left, int right){
     if (left < right){
         int mid = left + ((right - left ) / 2);

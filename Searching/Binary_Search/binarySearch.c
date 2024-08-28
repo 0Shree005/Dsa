@@ -1,4 +1,3 @@
-// Binary Search
 int binarySearch(int arr[], int size, int userInput)
 {
     int start = 0;

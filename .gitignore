@@ -1,4 +1,2 @@
-.vscode
-Backups
 program
-a.out
+*.o
