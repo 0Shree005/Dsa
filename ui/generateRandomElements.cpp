@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 
+#include "../ui.h"
+
 std::vector<int> generateRandomElements(int size) {
     std::vector<int> elements;
 
@@ -12,10 +14,7 @@ std::vector<int> generateRandomElements(int size) {
     for (int i = 0; i < size; i++) {
         int randomNum = std::rand() % 100;
         elements.push_back(randomNum);
-        std::cout << randomNum << " ";
     }
-    std::cout << std::endl;
-
+    printArray(elements, size);
     return elements;
 }
-
