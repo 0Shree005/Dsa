@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-#include <cstdlib>
-#include <ctime>
 #include <limits>
 
 #include "algorithms.h"
@@ -10,32 +8,27 @@
 
 using namespace std;
 
-/*extern "C" {*/
-/*    void linearSearch(int arr[], int size, int target);*/
-/*    void mergeSort(int arr[], int left, int right);*/
-/*    void selectionSort(int arr[], int size);*/
-/*}*/
-
 int main() {
 
-    displayDSMenu();
+    int* cArr = nullptr;
+    int size = 0;
 
-    displaySSMenu();
+    displayDSMenu(cArr, size);
 
-    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    // Sorting Algorithms
+    string sortingMenu = "\nSorting Algorithms:\n1. Merge Sort\n2. Selection Sort\n3. Exit\n";
+    vector<int> sortingSelections = getUserSelections(sortingMenu);
+    execSortingAlgos(cArr, size, sortingSelections);
 
-    std::cout << "Please enter the numbers of the algorithms you want to analyze: ";
-    std::string line;
-    std::getline(std::cin, line);
-    std::stringstream ss(line);
-    std::vector<int> selections;
-    int num;
+    cout << "\nPress Enter to continue to Search";
 
-    while (ss >> num) {
-        selections.push_back(num);
-    }
+    // Searching Algorithms
+    string searchingMenu = "\nSearching Algorithms:\n1. Linear Search\n2. Binary Search\n3. Exit\n";
+    vector<int> searchingSelections = getUserSelections(searchingMenu);
+    execSearchingAlgos(cArr, size, searchingSelections);
 
-    executeAlgorithms(selections);
+    delete[] cArr;
 
     return 0;
+
 }

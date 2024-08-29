@@ -3,11 +3,17 @@
 
 #include <vector>
 
-std::vector<int> generateRandomElements(int size);
+using namespace std;
 
-void displayDSMenu();
-void displaySSMenu();
-void executeAlgorithms(const std::vector<int>& selections);
-void printArray(std::vector<int> elements, int size);
+vector<int> generateRandomElements(int size);
+vector<int> getUserSelections(const string& menu);
+
+void displayDSMenu(int*& cArr, int& size);
+void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections);
+void execSearchingAlgos(int* cArr, int size, const std::vector<int>& selections);
+
+// Arrays
+int* userInputArray(int MAX_ELEMENTS, int& size);
+void printArray(int* cArr, int size);
 
 #endif

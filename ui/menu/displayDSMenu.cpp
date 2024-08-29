@@ -1,12 +1,12 @@
 #include <iostream>
 #include <vector>
-#include "../ui.h"
+#include "../../ui.h"
 
 using namespace std;
 
 const int MAX_ELEMENTS =  25000000;
 
-void displayDSMenu() {
+void displayDSMenu(int*& cArr, int& size) {
     int choice;
 
     while (true) {
@@ -22,23 +22,13 @@ void displayDSMenu() {
         if (choice == 1) {
             cout << "You selected *Array* as your Data Structure." << endl;
             cout << "\n";
-            cout << "Enter the size of the array: ";
-            int size;
-            cin >> size;
-
-            if (size > MAX_ELEMENTS) {
-                cout << "ERROR: Maximum allowed size is " << MAX_ELEMENTS << " elements (" << (MAX_ELEMENTS * 4 / (1024.0 * 1024.0)) << "MB)." << endl;
-                exit(0);
-            }
-
-            vector<int> randomElements = generateRandomElements(size);
+            cArr = userInputArray(MAX_ELEMENTS, size);
             break;
         } else if (choice == 2) {
-            cout << "Exiting..." << endl;
+            cout << "\nExiting..." << endl;
             exit(0);
         } else {
             cout << "Invalid choice, please try again.\n" << endl;
         }
     }
 }
-
