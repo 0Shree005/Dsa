@@ -5,7 +5,8 @@
 
 std::vector<int> generateRandomElements(int size);
 
-void displayMenu();
+void displayDSMenu();
+void displaySSMenu();
 void executeAlgorithms(const std::vector<int>& selections);
 
 #endif

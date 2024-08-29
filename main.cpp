@@ -3,6 +3,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <ctime>
+#include <limits>
 
 #include "algorithms.h"
 #include "ui.h"
@@ -15,12 +16,13 @@ using namespace std;
 /*    void selectionSort(int arr[], int size);*/
 /*}*/
 
-void displayMenu();
-void executeAlgorithms(const std::vector<int>& selections);
-
 int main() {
 
-    displayMenu();
+    displayDSMenu();
+
+    displaySSMenu();
+
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::cout << "Please enter the numbers of the algorithms you want to analyze: ";
     std::string line;
@@ -32,11 +34,6 @@ int main() {
     while (ss >> num) {
         selections.push_back(num);
     }
-    cout << "Enter the size of the array: ";
-    int size;
-    cin >> size;
-
-    vector<int> randomElements = generateRandomElements(size);
 
     executeAlgorithms(selections);
 
