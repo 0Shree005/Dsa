@@ -22,13 +22,15 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
         switch (choice) {
             case 1: {
                 mergeSort(cArr, 0, size - 1);
-                printArray(cArr, size);
                 timings.push_back({"Merge Sort", 0.0});
+                printSmallSep("Merge sort executed");
                 break;
             }
             case 2: {
-                /*selectionSort(arr, size);*/
+                printSmallSep("Selection sort is currently sorting...");
+                selectionSort(cArr, size);
                 timings.push_back({"Selection Sort", 0.0});
+                printSmallSep("Selection sort executed");
                 break;
             }
             case 3: {
@@ -39,7 +41,6 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
                 std::cout << "\nInvalid selection: " << choice << "\n";
                 break;
             }
-
         }
 
         auto end = high_resolution_clock::now();
@@ -47,6 +48,7 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
         timings.back().second = timeTaken;
 
     }
+    printArray(cArr, size);
     PrintAlgoTable(timings);
 }
 
@@ -60,14 +62,15 @@ void execSearchingAlgos(int* cArr, int size, const std::vector<int>& selections,
 
         switch (choice) {
             case 1: {
-                printSmallSep("Linear Search Executed");
-                /*int linResult = linearSearch(cArr, size, userInput);*/
-                /*printResult(userInput, linResult);*/
+                int linResult = linearSearch(cArr, size, userInput);
+                cout << "Linear Search: ";
+                printResult(userInput, linResult);
                 timings.push_back({"Linear Search", 0.0});
                 break;
             }
             case 2: {
                 int binResult = binarySearch(cArr, size, userInput);
+                cout << "Binary Search: ";
                 printResult(userInput, binResult);
                 timings.push_back({"Binary Search", 0.0});
                 break;

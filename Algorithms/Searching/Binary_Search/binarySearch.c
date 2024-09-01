@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 int binarySearch(int arr[], int size, int userInput)
 {
     int start = 0;

@@ -1,10 +1,8 @@
 #include <iostream>
-/*#include <stdio>*/
 #include <vector>
 #include <sstream>
 #include <limits>
 #include <algorithm>
-/*#include <conio>*/
 
 #include "algorithms.h"
 #include "ui.h"
