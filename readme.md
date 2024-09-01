@@ -143,4 +143,8 @@ Please enter the numbers of the algorithms you want to analyze: 1 2
 Please enter the element you want to search: 93
 Linear Search: The element _93_ was found at position: _11504_.
 Binary Search: The element _93_ was found at position: _11573_.
+
+_sr no.__|____Algorithm____|__time taken_
+     1   |   Linear Search | 0.000031 seconds
+     2   |   Binary Search | 0.000004 seconds
 ```
