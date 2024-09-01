@@ -1,8 +1,10 @@
+#include <stdlib.h>
 void merge(int arr[], int left, int mid, int right){
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
-    int L[n1], R[n2];
+    int *L = (int *)malloc(n1 * sizeof(int));
+    int *R = (int *)malloc(n2 * sizeof(int));
 
     for(int i = 0; i < n1; i++){
         L[i] = arr[left + i];

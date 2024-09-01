@@ -5,7 +5,8 @@ using namespace std;
 
 void printArray(int* cArr, int size) {
 
-    cout << "Generated array: ";
+        cout << "\n========= Generated array =========" << endl;
+    /*cout << "Generated array: ";*/
     if (size < 75 ) {
         cout << "[ ";
         for (int i = 0; i < size; i++)
@@ -31,15 +32,15 @@ void printArray(int* cArr, int size) {
 
     size_t memoryUsage = size * sizeof(int);
 
-    cout << "Array Memory Usage: ";
+        cout << "\n--- Array Memory Usage *";
     if (memoryUsage < 1024) {
-        cout << memoryUsage << " bytes\n";
+        cout << memoryUsage << " bytes";
     } else if (memoryUsage < 1024 * 1024) {
-        cout << memoryUsage / 1024.0 << " KB\n";
+        cout << memoryUsage / 1024.0 << " KB";
     } else if (memoryUsage < 1024 * 1024 * 1024) {
-        cout << memoryUsage / (1024.0 * 1024) << " MB\n";
+        cout << memoryUsage / (1024.0 * 1024) << " MB";
     } else {
-        cout << memoryUsage / (1024.0 * 1024 * 1024) << " GB\n";
+        cout << memoryUsage / (1024.0 * 1024 * 1024) << " GB";
     }
-
+    cout << "* ---" << endl;
 }

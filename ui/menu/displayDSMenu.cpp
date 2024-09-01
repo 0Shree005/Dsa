@@ -10,6 +10,11 @@ void displayDSMenu(int*& cArr, int& size) {
     int choice;
 
     while (true) {
+        printTitleSep("Data Structures");
+        /*cout << "=====================================" << endl;*/
+        /*cout << " ========= Data Structures ========= " << endl;*/
+        /*cout << "=====================================" << endl;*/
+
         cout << "Choose your Data Structure:" << endl;
         cout << "1. Arrays" << endl;
         cout << "2. Exit" << endl;
