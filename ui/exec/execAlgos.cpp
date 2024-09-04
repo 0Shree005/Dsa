@@ -15,30 +15,44 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
 
     vector<pair<string, double>> timings;
 
+    int* originalArray = new int[size];
+    copy(cArr, cArr + size, originalArray);
+
     for (int choice : selections) {
+
+        int* tempArray = new int[size];
+        copy(originalArray, originalArray + size, tempArray);
 
         auto start = high_resolution_clock::now();
 
         switch (choice) {
             case 1: {
-                mergeSort(cArr, 0, size - 1);
+                printSmallSep("Merge sort is currently sorting...");
+                mergeSort(tempArray, 0, size - 1);
                 timings.push_back({"Merge Sort", 0.0});
                 printSmallSep("Merge sort executed");
                 break;
             }
             case 2: {
                 printSmallSep("Selection sort is currently sorting...");
-                selectionSort(cArr, size);
+                selectionSort(tempArray, size);
                 timings.push_back({"Selection Sort", 0.0});
                 printSmallSep("Selection sort executed");
                 break;
             }
-            case 3: {
+            case 3:{
+                printSmallSep("Bubble sort is currently sorting...");
+                bubbleSort(tempArray, size);
+                timings.push_back({"Bubble Sort", 0.0});
+                printSmallSep("Bubble Sort executed");
+                break;
+            }
+            case 4: {
                 cout << "\nExiting..." << endl;
                 exit(0);
             }
             default: {
-                std::cout << "\nInvalid selection: " << choice << "\n";
+                cout << "\nInvalid selection: " << choice << "\n";
                 break;
             }
         }
@@ -46,10 +60,22 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
         auto end = high_resolution_clock::now();
         double timeTaken = duration<double>(end - start).count();
         timings.back().second = timeTaken;
+        /*printf("After merge Sort, BEFORE original assigning to cArr\n");*/
+        /*printArray(cArr, size);*/
 
+        /*cArr = originalArray;*/
+        /*cArr = tempArray;*/
+        copy(tempArray, tempArray + size, cArr);
+        delete[] tempArray;
+        /*printf("originalArray\n");*/
+        /*printArray(originalArray, size);*/
+        /*printf("cArr after being assigned the original array\n");*/
+        /*printArray(cArr, size);*/
     }
+
     printArray(cArr, size);
     PrintAlgoTable(timings);
+    delete[] originalArray;
 }
 
 void execSearchingAlgos(int* cArr, int size, const std::vector<int>& selections, int userInput) {
@@ -97,4 +123,5 @@ void PrintAlgoTable(const vector<pair<string, double>> timings) {
              << setw(14) << timing.first << " | "
              << fixed << setprecision(6) << timing.second << " seconds\n";
     }
+    cout << endl;
 }

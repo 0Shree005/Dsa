@@ -9,12 +9,14 @@
 
 using namespace std;
 
+const int MAX_ELEMENTS =  25000000;
+
 int main() {
 
     int* cArr = nullptr;
     int size = 0;
 
-    displayDSMenu(cArr, size);
+    displayDSMenu(cArr, size, MAX_ELEMENTS);
 
     cout << "\nPress Enter to continue to Sort";
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -22,7 +24,7 @@ int main() {
 
     // Sorting Algorithms
     printTitleSep("Sorting Algorithms");
-    string sortingMenu = "\n1. Merge Sort\n2. Selection Sort\n3. Exit\n";
+    string sortingMenu = "\n1. Merge Sort\n2. Selection Sort\n3. Bubble Sort\n4. Exit\n";
     vector<int> sortingSelections = getUserSelections(sortingMenu);
     execSortingAlgos(cArr, size, sortingSelections);
 

@@ -4,16 +4,11 @@
 
 using namespace std;
 
-const int MAX_ELEMENTS =  25000000;
-
-void displayDSMenu(int*& cArr, int& size) {
+void displayDSMenu(int*& cArr, int& size, int MAX_ELEMENTS) {
     int choice;
 
     while (true) {
         printTitleSep("Data Structures");
-        /*cout << "=====================================" << endl;*/
-        /*cout << " ========= Data Structures ========= " << endl;*/
-        /*cout << "=====================================" << endl;*/
 
         cout << "Choose your Data Structure:" << endl;
         cout << "1. Arrays" << endl;
