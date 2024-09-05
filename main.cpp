@@ -24,7 +24,7 @@ int main() {
 
     // Sorting Algorithms
     printTitleSep("Sorting Algorithms");
-    string sortingMenu = "\n1. Merge Sort\n2. Selection Sort\n3. Bubble Sort\n4. Exit\n";
+    string sortingMenu = "\n1. Merge Sort\n2. Selection Sort\n3. Bubble Sort\n4. Insertion Sort\n5. Exit\n";
     vector<int> sortingSelections = getUserSelections(sortingMenu);
     execSortingAlgos(cArr, size, sortingSelections);
 

@@ -2,6 +2,7 @@
 #include <vector>
 #include <chrono>
 #include <iomanip>
+#include <cmath>
 
 #include "../../algorithms.h"
 #include "../../ui.h"
@@ -22,6 +23,16 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
 
         int* tempArray = new int[size];
         copy(originalArray, originalArray + size, tempArray);
+
+        if (choice == 2 || choice == 3) {
+            if (size > 50000) {
+                cout << "\nWARNING: Selection sort and Bubble sort are VERY slow for large arrays (" << size << " elements). Please use a faster algorithm.\n";
+            }
+        } else if (choice == 4) {
+            if (size > 150000){
+                cout << "\nWARNING: Insertion sort is VERY slow for large arrays (" << size << " elements). Please use a faster algorithm\n";
+            }
+        }
 
         auto start = high_resolution_clock::now();
 
@@ -48,6 +59,13 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
                 break;
             }
             case 4: {
+                printSmallSep("Insertion sort is currently sorting...");
+	        insertionSearch(tempArray, size);
+                timings.push_back({"Insertion Sort", 0.0});
+                printSmallSep("Insertion Sort executed");
+                break;
+            }
+            case 5: {
                 cout << "\nExiting..." << endl;
                 exit(0);
             }
@@ -60,17 +78,10 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
         auto end = high_resolution_clock::now();
         double timeTaken = duration<double>(end - start).count();
         timings.back().second = timeTaken;
-        /*printf("After merge Sort, BEFORE original assigning to cArr\n");*/
-        /*printArray(cArr, size);*/
 
-        /*cArr = originalArray;*/
-        /*cArr = tempArray;*/
         copy(tempArray, tempArray + size, cArr);
+
         delete[] tempArray;
-        /*printf("originalArray\n");*/
-        /*printArray(originalArray, size);*/
-        /*printf("cArr after being assigned the original array\n");*/
-        /*printArray(cArr, size);*/
     }
 
     printArray(cArr, size);
@@ -102,7 +113,7 @@ void execSearchingAlgos(int* cArr, int size, const std::vector<int>& selections,
                 break;
             }
             default: {
-                std::cout << "\nInvalid selection: " << choice << "\n";
+                cout << "\nInvalid selection: " << choice << "\n";
                 break;
             }
         }
@@ -120,8 +131,24 @@ void PrintAlgoTable(const vector<pair<string, double>> timings) {
     int srNo = 1;
     for (const auto& timing : timings) {
         cout << setw(6) << srNo++ << "   |  "
-             << setw(14) << timing.first << " | "
-             << fixed << setprecision(6) << timing.second << " seconds\n";
+             << setw(14) << timing.first << " | ";
+
+            double timeTaken = timing.second;
+
+            if (timeTaken < 1e-6){
+                cout << fixed << setprecision(3) << timeTaken * 1e9 << " nanoseconds\n";
+            } else if (timeTaken < 1e-3) {
+                cout << fixed << setprecision(3) << timeTaken * 1e3 << " microseconds\n";
+            } else if (timeTaken < 1.0) {
+                cout << fixed << setprecision(3) << timeTaken * 1e3 << " milliseconds\n";
+            } else if (timeTaken < 60.0) {
+                cout << fixed << setprecision(6) << timeTaken << " seconds\n";
+            } else {
+                int minutes = static_cast<int>(timeTaken / 60);
+                double seconds = fmod(timeTaken, 60.0);
+                cout << minutes << " minutes and " << fixed << setprecision(6) << seconds << " seconds\n";
+            }
+
     }
     cout << endl;
 }

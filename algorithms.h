@@ -10,6 +10,7 @@ extern "C" {
 	void selectionSort(int arr[], int size);
 	int linearSearch(int arr[], int size, int userInput);
 	void bubbleSort(int* arr, int size);
+	void insertionSearch(int arr[], int size);
 
 	#ifdef __cplusplus
 }
