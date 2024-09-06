@@ -5,7 +5,9 @@
 
 using namespace std;
 
-// Arrays
+/*
+ * Arrays
+*/
 int* userInputArray(int MAX_ELEMENTS, int& size);
 void printArray(int* cArr, int size);
 
@@ -17,6 +19,10 @@ void execSortingAlgos(int* cArr, int size, const vector<int>& selections);
 void execSearchingAlgos(int* cArr, int size, const vector<int>& selections, int userInput);
 void printResult(int userInput, int BinResult);
 
+
+
+
+/* Separators */
 void printSmallSep(const string& title);
 void printTitleSep(const string& title);
 

@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 
-#include "../../ui.h"
+#include "../../../include/ui.h"
 
 using namespace std;
 

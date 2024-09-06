@@ -5,12 +5,15 @@
 extern "C" {
 	#endif
 
+	/*
+	 * Arrays
+	 */
 	int binarySearch(int arr[], int size, int target);
+	int linearSearch(int arr[], int size, int userInput);
 	void mergeSort(int arr[], int left, int right);
 	void selectionSort(int arr[], int size);
-	int linearSearch(int arr[], int size, int userInput);
 	void bubbleSort(int* arr, int size);
-	void insertionSearch(int arr[], int size);
+	void insertionSort(int arr[], int size);
 
 	#ifdef __cplusplus
 }

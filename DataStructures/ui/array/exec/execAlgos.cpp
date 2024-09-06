@@ -4,8 +4,8 @@
 #include <iomanip>
 #include <cmath>
 
-#include "../../algorithms.h"
-#include "../../ui.h"
+#include "../../../../include/algorithms.h"
+#include "../../../../include/ui.h"
 
 using namespace std;
 using namespace std::chrono;
@@ -60,7 +60,7 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
             }
             case 4: {
                 printSmallSep("Insertion sort is currently sorting...");
-	        insertionSearch(tempArray, size);
+                insertionSort(tempArray, size);
                 timings.push_back({"Insertion Sort", 0.0});
                 printSmallSep("Insertion Sort executed");
                 break;

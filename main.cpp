@@ -1,54 +1,45 @@
 #include <iostream>
-#include <vector>
-#include <sstream>
-#include <limits>
-#include <algorithm>
 
-#include "algorithms.h"
-#include "ui.h"
+#include "include/dataStructs.h"
+#include "include/ui.h"
 
 using namespace std;
 
-const int MAX_ELEMENTS =  25000000;
+int main(){
 
-int main() {
+    int choice;
 
-    int* cArr = nullptr;
-    int size = 0;
+    int flag = true;
 
-    displayDSMenu(cArr, size, MAX_ELEMENTS);
+    while (flag) {
+        printTitleSep("Data Structures");
 
-    cout << "\nPress Enter to continue to Sort";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cin.get();
+        cout << "Choose your Data Structure:" << endl;
+        cout << "1. Arrays" << endl;
+        cout << "2. Linked Lists" << endl;
+        cout << "3. Exit" << endl;
 
-    // Sorting Algorithms
-    printTitleSep("Sorting Algorithms");
-    string sortingMenu = "\n1. Merge Sort\n2. Selection Sort\n3. Bubble Sort\n4. Insertion Sort\n5. Exit\n";
-    vector<int> sortingSelections = getUserSelections(sortingMenu);
-    execSortingAlgos(cArr, size, sortingSelections);
+        cout << "\n";
 
-    cout << "\nPress Enter to continue to Search";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cin.get();
+        cout << "Please Choose a Data Structure from the list: ";
+        cin >> choice;
 
-    // Searching Algorithms
-    printTitleSep("Searching Algorithms");
-    string searchingMenu = "\n1. Linear Search\n2. Binary Search\n3. Exit\n";
-    vector<int> searchingSelections = getUserSelections(searchingMenu);
-
-    if (find(searchingSelections.begin(), searchingSelections.end(), 3) != searchingSelections.end()) {
-        cout << "\nExiting...\n";
-        return 0;
+       switch ( choice ) {
+            case 1:
+                cout << "You selected *Array* as your Data Structure.\n" << endl;
+                arrays();
+                flag = false;
+                break;
+            case 2:
+                cout << "You selected *Linked Lists* as your Data Structure.\n" << endl;
+                linkedLists();
+                flag = false;
+                break;
+            case 3:
+                cout << "\nExiting..." << endl;
+                exit(0);
+            default:
+                cout << "Invalid choice, please try again.\n" << endl;
+        }
     }
-
-    cout << "Please enter the element you want to search: ";
-    int userInput;
-    cin >> userInput;
-    execSearchingAlgos(cArr, size, searchingSelections, userInput);
-
-    delete[] cArr;
-
-    return 0;
-
 }
