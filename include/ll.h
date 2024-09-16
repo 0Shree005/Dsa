@@ -11,14 +11,15 @@ typedef struct node
     struct node* next;
 } node;
 
-void printLL(node* list);
+void printLL(node* head);
 
 #ifdef __cplusplus
     extern "C" {
     #endif
 
-    void llOperations(node** list);
-    void insertSorted(node** list, int number);
+    void llOperations(node** head);
+    void insertSorted(node** head, int number);
+    void deleteStartingNode(node** head);
 
     #ifdef __cplusplus
 }

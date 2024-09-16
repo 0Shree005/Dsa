@@ -2,9 +2,9 @@
 #include "../../../include/ll.h"
 using namespace std;
 
-void printLL(node* list)
+void printLL(node* head)
 {
-	node* ptr = list;
+	node* ptr = head;
 	while (ptr != nullptr)
 	{
 		cout<< ptr -> number << " -> ";

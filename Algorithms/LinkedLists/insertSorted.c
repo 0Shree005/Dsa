@@ -3,7 +3,7 @@
 
 #include "../../include/ll.h"
 
-void insertSorted(node** list, int number){
+void insertSorted(node** head, int number){
 	node* n = malloc(sizeof(node));
 	if(n == NULL){
 		printf("Memory Allocation Failed.\n");
@@ -13,15 +13,15 @@ void insertSorted(node** list, int number){
 	n -> number = number;
 	n -> next = NULL;
 
-	if (*list == NULL || number < (*list) -> number)
+	if (*head == NULL || number < (*head) -> number)
 	{
-		n -> next = *list;
-		*list = n;
+		n -> next = *head;
+		*head = n;
 	}
 
 	else
 	{
-		node* ptr = *list;
+		node* ptr = *head;
 		while(ptr -> next != NULL && ptr -> next -> number < number)
 		{
 			ptr = ptr -> next;

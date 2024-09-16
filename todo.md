@@ -7,7 +7,7 @@
 -  [ ] Shell Sort
 -  [ ] Quick Sort
 -  [ ] Heap Sort
-- [ ] Radix Sort
+-  [ ] Radix Sort
 
 ## **Searching**
 - [x] Linear Search
@@ -17,7 +17,7 @@
 - [ ] Exponential Search
 - [ ] Fibonacci Search
 - [ ] Jump Search
-- [ ]  Ternary Search
+- [ ] Ternary Search
 
 ## **Matrix Operations**
 -  Addition
@@ -29,10 +29,13 @@
 1. [ ] **Insert at the Beginning**: Add a node to the front of the list.
 2. [ ] **Insert at the End**: Add a node to the end of the list.
 3. [ ] **Insert at a Position**: Insert a node at a specific position.
-4. [ ]  **Delete a Node**: Remove a node from the list (beginning, end, or middle).
-5. [ ] **Search for a Node**: Find the position of a node by its value.
-6. [ ] **Traverse the List**: Go through the entire list and print the values.
-7. [ ] **Reverse the List**: Reverse the order of the nodes.
+4. [x] **Insert nodes in ascending order**: Insert nodes in ascending order.
+5. [x] **Delete a Node**: Remove a node from the list (beginning).
+6. [ ] **Delete a Node**: Remove a node from the list (middle).
+7. [ ] **Delete a Node**: Remove a node from the list (end).
+8. [ ] **Search for a Node**: Find the position of a node by its value.
+9. [x] **Traverse the List**: Go through the entire list and print the values.
+10. [ ] **Reverse the List**: Reverse the order of the nodes.
 
 ### Intermediate Operations:
 1. [ ] **Length of the List**: Find the number of nodes in the list.
@@ -48,9 +51,6 @@
 3. [ ]  **Clone a Linked List**: Create a deep copy of a linked list.
 4. [ ]  **Flattening a Multi-Level Linked List**: If a node can point to another list, flatten it into a single list.
 5. [ ]  **Skip List**: An advanced data structure that allows faster search within an ordered sequence by maintaining multiple layers of linked lists.
-
-
-Here's an expanded list of operations and algorithms you can implement for **stacks**, **queues**, **trees**, and **graphs** based on your learning goals. I'll include basic, intermediate, and advanced topics for each, to help guide your learning.
 
 ---
 

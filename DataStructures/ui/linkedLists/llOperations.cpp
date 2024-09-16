@@ -3,15 +3,16 @@
 
 using namespace std;
 
-void llOperations(node** list)
+void llOperations(node** head)
 {
 	int choice, value;
 
 	do
 	{
 		cout << "\n1. Insert a new value" << endl;
-		cout << "2. Print the Linked List" << endl;
-		cout << "3. Exit" << endl;
+		cout << "2. Delete an element from the beginning" << endl;
+		cout << "3. Print the Linked List" << endl;
+		cout << "4. Exit" << endl;
 		cout << "Enter your choice: ";
 		cin >> choice;
 		cout << endl;
@@ -21,16 +22,20 @@ void llOperations(node** list)
 			case 1:
 				cout << "Enter the value to insert: ";
 				cin >> value;
-				insertSorted(list, value);
+				insertSorted(head, value);
 				break;
 			case 2:
-				printLL(*list);
+				deleteStartingNode(head);
 				break;
 			case 3:
+				printLL(*head);
+				break;
+			case 4:
 				cout << "Exiting...\n";
+				exit(0);
 				break;
 			default:
 				cout << "Invalid choice, please try again.\n";
 		}
-	} while (choice != 3);
+	} while (choice != 4);
 }

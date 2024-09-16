@@ -4,18 +4,18 @@
 #include "../../include/ll.h"
 #include "../../include/algorithms.h"
 
-void createLL(node** list);
+void createLL(node** head);
 
 void linkedLists()
 {
-	node* list = NULL;
+	node* head = NULL;
 
-	createLL(&list);
+	createLL(&head);
 
-	llOperations(&list);
+	llOperations(&head);
 }
 
-void createLL(node** list)
+void createLL(node** head)
 {
 	int num;
 	printf("Enter values for the Linked List (enter -1 to stop): ");
@@ -26,6 +26,6 @@ void createLL(node** list)
 		{
 			break;
 		}
-		insertSorted(list, num);
+		insertSorted(head, num);
 	}
 }
