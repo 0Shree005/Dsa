@@ -15,8 +15,8 @@ int main(){
         printTitleSep("Data Structures");
 
         cout << "Choose your Data Structure:" << endl;
-        cout << "1. Arrays" << endl;
-        cout << "2. Linked Lists" << endl;
+        cout << "1. Array" << endl;
+        cout << "2. Linked List" << endl;
         cout << "3. Exit" << endl;
 
         cout << "\n";
@@ -31,12 +31,12 @@ int main(){
                 flag = false;
                 break;
             case 2:
-                cout << "You selected *Linked Lists* as your Data Structure.\n" << endl;
+                cout << "You selected *Linked List* as your Data Structure.\n" << endl;
                 linkedLists();
                 flag = false;
                 break;
             case 3:
-                cout << "\nExiting..." << endl;
+                cout << "\nThank you!\nExiting..." << endl;
                 exit(0);
             default:
                 cout << "Invalid choice, please try again.\n" << endl;

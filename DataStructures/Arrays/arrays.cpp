@@ -37,7 +37,7 @@ void arrays()
     vector<int> searchingSelections = getUserSelections(searchingMenu);
 
     if (find(searchingSelections.begin(), searchingSelections.end(), 3) != searchingSelections.end()) {
-        cout << "\nExiting...\n";
+        cout << "\nThank you!\nExiting...\n";
         return;
     }
 
@@ -45,6 +45,8 @@ void arrays()
     int userInput;
     cin >> userInput;
     execSearchingAlgos(cArr, size, searchingSelections, userInput);
+
+    cout << "\nThank you!\n" << endl;
 
     delete[] cArr;
 

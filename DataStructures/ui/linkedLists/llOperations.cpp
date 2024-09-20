@@ -10,7 +10,7 @@ void llOperations(node** head)
 	do
 	{
 		cout << "\n1. Insert a new value" << endl;
-		cout << "2. Delete an element from the beginning" << endl;
+		cout << "2. Delete the head of the list"<< endl;
 		cout << "3. Print the Linked List" << endl;
 		cout << "4. Exit" << endl;
 		cout << "Enter your choice: ";
@@ -31,7 +31,7 @@ void llOperations(node** head)
 				printLL(*head);
 				break;
 			case 4:
-				cout << "Exiting...\n";
+				cout << "Thank you!\nExiting...\n";
 				exit(0);
 				break;
 			default:
