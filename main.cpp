@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
 
-    int choice;
+    int choice, dimension;
 
     int flag = true;
 
@@ -26,8 +26,18 @@ int main(){
 
        switch ( choice ) {
             case 1:
-                cout << "You selected *Array* as your Data Structure.\n" << endl;
-                arrays();
+                cout << "\nDo you want to work with \n1. 1D Array\n2. 2D Array ( Matrix )" << endl;
+                cout << "Please enter your choice: ";
+                cin >> dimension;
+                if ( dimension == 1 ) {
+                    arrays();
+                }
+                else if ( dimension == 2 ) {
+                    matrix();
+                }
+                else {
+                    cout << "Invalid Choice!" << endl;
+                }
                 flag = false;
                 break;
             case 2:

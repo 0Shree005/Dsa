@@ -20,9 +20,19 @@
 - [ ] Ternary Search
 
 ## **Matrix Operations**
--  Addition
-- Multiplication
-- Transposition
+- [x] Addition & Subtraction
+- [ ] Multiplication
+- [ ] Transposition
+- [ ] Determinant
+- [ ] Inversion
+- [ ] Eigenvalues & Eigenvectors
+- [ ] LU Decomposition
+- [ ] Singular Value Decomposition
+- [ ] Matrix Exponentiation
+- [ ] Kronecker Product
+- [ ] Hadamard Product
+
+
 # 2. **Linked Lists**
 
 ### Basic Operations for Linked Lists:
@@ -39,18 +49,18 @@
 
 ### Intermediate Operations:
 1. [ ] **Length of the List**: Find the number of nodes in the list.
-2. [ ]  **Detect Cycle**: Check if the list has a cycle (for circular linked lists).
-3. [ ]  **Delete List**: Remove all nodes from the list.
+2. [ ] **Detect Cycle**: Check if the list has a cycle (for circular linked lists).
+3. [ ] **Delete List**: Remove all nodes from the list.
 4. [ ] **Merge Two Lists**: Merge two sorted linked lists into one.
-5. [ ]  **Find Middle Node**: Use two pointers to find the middle node of the list.
-6. [ ]  **Nth Node from the End**: Get the nth node from the end using a two-pointer approach.
+5. [ ] **Find Middle Node**: Use two pointers to find the middle node of the list.
+6. [ ] **Nth Node from the End**: Get the nth node from the end using a two-pointer approach.
 
 ### Advanced Operations:
-1. [ ]  **Doubly Linked List**: Implement a linked list with pointers to both the next and previous nodes.
-2. [ ]  **Circular Linked List**: Implement a circular linked list where the last node points to the first.
-3. [ ]  **Clone a Linked List**: Create a deep copy of a linked list.
-4. [ ]  **Flattening a Multi-Level Linked List**: If a node can point to another list, flatten it into a single list.
-5. [ ]  **Skip List**: An advanced data structure that allows faster search within an ordered sequence by maintaining multiple layers of linked lists.
+1. [ ] **Doubly Linked List**: Implement a linked list with pointers to both the next and previous nodes.
+2. [ ] **Circular Linked List**: Implement a circular linked list where the last node points to the first.
+3. [ ] **Clone a Linked List**: Create a deep copy of a linked list.
+4. [ ] **Flattening a Multi-Level Linked List**: If a node can point to another list, flatten it into a single list.
+5. [ ] **Skip List**: An advanced data structure that allows faster search within an ordered sequence by maintaining multiple layers of linked lists.
 
 ---
 

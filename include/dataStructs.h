@@ -2,6 +2,7 @@
 #define DATASTRUCTS_H
 
 void arrays();
+void matrix();
 
 #ifdef __cplusplus
 extern "C" {
