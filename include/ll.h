@@ -18,8 +18,9 @@ void printLL(node* head);
     #endif
 
     void llOperations(node** head);
-    void insertSorted(node** head, int number);
-    void deleteStartingNode(node** head);
+    void insertSorted(node** head, int value);
+    void deleteHead(node** head);
+    void insertHead(node** head, int value);
 
     #ifdef __cplusplus
 }

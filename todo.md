@@ -36,7 +36,7 @@
 # 2. **Linked Lists**
 
 ### Basic Operations for Linked Lists:
-1. [ ] **Insert at the Beginning**: Add a node to the front of the list.
+1. [x] **Insert at the Beginning**: Add a node to the front of the list.
 2. [ ] **Insert at the End**: Add a node to the end of the list.
 3. [ ] **Insert at a Position**: Insert a node at a specific position.
 4. [x] **Insert nodes in ascending order**: Insert nodes in ascending order.
