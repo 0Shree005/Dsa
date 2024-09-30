@@ -1,45 +1,42 @@
 #include <iostream>
-#include <vector>
 
-using namespace std;
+void printArray(const int* cArr, int size) {
 
-void printArray(int* cArr, int size) {
-
-        cout << "\n========= Generated array =========" << endl;
+    std::cout << "\n========= Generated array =========" << std::endl;
     if (size < 75 ) {
-        cout << "[ ";
+        std::cout << "[ ";
         for (int i = 0; i < size; i++)
         {
-           cout << cArr[i] << " ";
+           std::cout << cArr[i] << " ";
         }
-        cout << "] \n\n";
+        std::cout << "] \n\n";
     }
 
     else {
-        cout << "[ ";
+        std::cout << "[ ";
         for (int i = 0; i < 10; i++)
         {
-            cout << cArr[i] << " ";
+            std::cout << cArr[i] << " ";
         }
-        cout << ".... ";
+        std::cout << ".... ";
         for (int i = 5; i > 0; i--)
         {
-             cout << cArr[ size - i ] << " ";
+             std::cout << cArr[ size - i ] << " ";
         }
-        cout << "] (truncated) \n";
+        std::cout << "] (truncated) \n";
     }
 
     size_t memoryUsage = size * sizeof(int);
 
-    cout << "\n--- Array Memory Usage *";
+    std::cout << "\n--- Array Memory Usage *";
     if (memoryUsage < 1024) {
-        cout << memoryUsage << " bytes";
+        std::cout << memoryUsage << " bytes";
     } else if (memoryUsage < 1024 * 1024) {
-        cout << memoryUsage / 1024.0 << " KB";
+        std::cout << memoryUsage / 1024.0 << " KB";
     } else if (memoryUsage < 1024 * 1024 * 1024) {
-        cout << memoryUsage / (1024.0 * 1024) << " MB";
+        std::cout << memoryUsage / (1024.0 * 1024) << " MB";
     } else {
-        cout << memoryUsage / (1024.0 * 1024 * 1024) << " GB";
+        std::cout << memoryUsage / (1024.0 * 1024 * 1024) << " GB";
     }
-    cout << "* ---" << endl;
+    std::cout << "* ---" << std::endl;
 }

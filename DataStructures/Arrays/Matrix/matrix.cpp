@@ -1,24 +1,18 @@
-/*PLESAE CHECK THE PRINTll line WHEN THE PROGRAM RUNS AGAIN, BECAUSE I DON"T REMEMEBER WHY I ADDED IT IN THE LL.h and NOT in the cpp thing*/
-
 #include <iostream>
 #include <ctime>
 #include <iomanip>
 
-#include "../../../include/ui.h"
-#include "../../../include/algorithms.h"
-#include "../../../include/mat.h"
-
-using namespace std;
+#include "../../../include/matrix.h"
 
 void freeMatrix(Matrix mat);
-void printMatrix(const std::string label, Matrix mat);
+void printMatrix(const std::string& label, Matrix mat);
 
 void matrix() {
 
     int m, n;
 
-    cout << "Enter the dimensions of the matrix(m n): ";
-    cin >> m >> n;
+    std::cout << "Enter the dimensions of the matrix(m n): ";
+    std::cin >> m >> n;
 
     srand(time(0));
 
@@ -28,38 +22,38 @@ void matrix() {
 
     matrixOperations(A, B, C);
 
-    printMatrix("A ",A);
-    printMatrix("B ",B);
-    printMatrix("C ",C);
+    printMatrix("A ", A);
+    printMatrix("B ", B);
+    printMatrix("C ", C);
 
     freeMatrix(A);
     freeMatrix(B);
     freeMatrix(C);
 }
 
-void printMatrix(const std::string label, Matrix mat) {
-    cout << label << " (" << mat.rows << "x" << mat.cols << "):\n";
+void printMatrix(const std::string& label, Matrix mat) {
+    std::cout << label << " (" << mat.rows << "x" << mat.cols << "):\n";
 
-    cout << " +";
+    std::cout << " +";
     for (int j = 0; j < mat.cols; j++) {
-        cout << "---+";
+        std::cout << "---+";
     }
-    cout << endl;
+    std::cout << std::endl;
 
     for (int i = 0; i < mat.rows; i++) {
-        cout << " |";
+        std::cout << " |";
         for (int j = 0; j < mat.cols; j++) {
-            cout << setw(2) << mat.data[i][j] << " |";
+            std::cout << std::setw(2) << mat.data[i][j] << " |";
         }
-        cout << endl;
+        std::cout << std::endl;
 
-        cout << " +";
+        std::cout << " +";
         for (int j = 0; j < mat.cols; j++) {
-            cout << "---+";
+            std::cout << "---+";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
-    cout << endl;
+    std::cout << std::endl;
 }
 
 void freeMatrix(Matrix mat) {

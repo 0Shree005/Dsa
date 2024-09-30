@@ -14,15 +14,16 @@ typedef struct node
 void printLL(node* head);
 
 #ifdef __cplusplus
-    extern "C" {
-    #endif
+	extern "C" {
+	#endif
 
-    void llOperations(node** head);
-    void insertSorted(node** head, int value);
-    void deleteHead(node** head);
-    void insertHead(node** head, int value);
+	void llOperations(node** head);
+	void createLL(node** head);
+	void insertSorted(node** head, int value);
+	void deleteHead(node** head);
+	void insertHead(node** head, int value);
 
-    #ifdef __cplusplus
+	#ifdef __cplusplus
 }
 #endif
 

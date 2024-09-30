@@ -1,13 +1,11 @@
 #include <iostream>
 
-using namespace std;
-
 void printTitleSep(const std::string& title) {
-    cout << "\n=====================================\n";
-    cout << "     === " << title << " ===\n";
-    cout << "=====================================\n";
+    std::cout << "\n=====================================\n";
+    std::cout << "     === " << title << " ===\n";
+    std::cout << "=====================================\n";
 }
 
 void printSmallSep(const std::string& title) {
-    cout << "--- " << title << " ---\n";
+    std::cout << "--- " << title << " ---\n";
 }

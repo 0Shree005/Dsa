@@ -1,7 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
 
 #include "../../include/ll.h"
+
+void createLL(node** head);
 
 void linkedLists()
 {

@@ -1,14 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <cstdlib>
 #include <ctime>
 
 #include "../../../include/ui.h"
 
-using namespace std;
-
-vector<int> generateRandomElements(int size) {
-    vector<int> elements;
+std::vector<int> generateRandomElements(int size) {
+    std::vector<int> elements;
 
     srand(time(0));
 

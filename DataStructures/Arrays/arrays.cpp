@@ -1,13 +1,8 @@
 #include <iostream>
-#include <vector>
-#include <sstream>
 #include <limits>
 #include <algorithm>
 
-#include "../../include/algorithms.h"
 #include "../../include/ui.h"
-
-using namespace std;
 
 const int MAX_ELEMENTS =  25000000;
 
@@ -17,36 +12,36 @@ void arrays()
     int size = 0;
     int* cArr = userInputArray(MAX_ELEMENTS, size);
 
-    cout << "\nPress Enter to continue to Sort";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cin.get();
+    std::cout << "\nPress Enter to continue to Sort";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.get();
 
     // Sorting Algorithms
     printTitleSep("Sorting Algorithms");
-    string sortingMenu = "\n1. Merge Sort\n2. Selection Sort\n3. Bubble Sort\n4. Insertion Sort\n5. Exit\n";
-    vector<int> sortingSelections = getUserSelections(sortingMenu);
+    std::string sortingMenu = "\n1. Merge Sort\n2. Selection Sort\n3. Bubble Sort\n4. Insertion Sort\n5. Exit\n";
+    std::vector<int> sortingSelections = getUserSelections(sortingMenu);
     execSortingAlgos(cArr, size, sortingSelections);
 
-    cout << "\nPress Enter to continue to Search";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cin.get();
+    std::cout << "\nPress Enter to continue to Search";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.get();
 
     // Searching Algorithms
     printTitleSep("Searching Algorithms");
-    string searchingMenu = "\n1. Linear Search\n2. Binary Search\n3. Exit\n";
-    vector<int> searchingSelections = getUserSelections(searchingMenu);
+    std::string searchingMenu = "\n1. Linear Search\n2. Binary Search\n3. Exit\n";
+    std::vector<int> searchingSelections = getUserSelections(searchingMenu);
 
     if (find(searchingSelections.begin(), searchingSelections.end(), 3) != searchingSelections.end()) {
-        cout << "\nThank you!\nExiting...\n";
+        std::cout << "\nThank you!\nExiting...\n";
         return;
     }
 
-    cout << "Please enter the element you want to search: ";
+    std::cout << "Please enter the element you want to search: ";
     int userInput;
-    cin >> userInput;
+    std::cin >> userInput;
     execSearchingAlgos(cArr, size, searchingSelections, userInput);
 
-    cout << "\nThank you!\n" << endl;
+    std::cout << "\nThank you!\n" << std::endl;
 
     delete[] cArr;
 

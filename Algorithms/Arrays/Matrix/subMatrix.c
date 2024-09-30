@@ -1,6 +1,4 @@
-#include <stdio.h>
-
-#include "../../../include/mat.h"
+#include "../../../include/matrix.h"
 
 void subMatrix(Matrix A, Matrix B, Matrix C) {
 

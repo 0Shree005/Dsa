@@ -1,22 +1,19 @@
 #include <iostream>
-#include <vector>
 #include <sstream>
 #include <limits>
+#include <vector>
 
-using namespace std;
-
-
-vector<int> getUserSelections(const string& menu) {
-    vector<int> selections;
-    string line;
+std::vector<int> getUserSelections(const std::string& menu) {
+    std::vector<int> selections;
+    std::string line;
     int num;
 
-    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-    cout << menu;
-    cout << "Please enter the numbers of the algorithms you want to analyze: ";
-    getline(cin, line);
-    stringstream ss(line);
+    std::cout << menu;
+    std::cout << "Please enter the numbers of the algorithms you want to analyze: ";
+    getline(std::cin, line);
+    std::stringstream ss(line);
 
     while (ss >> num) {
         selections.push_back(num);
@@ -24,4 +21,3 @@ vector<int> getUserSelections(const string& menu) {
 
     return selections;
 }
-

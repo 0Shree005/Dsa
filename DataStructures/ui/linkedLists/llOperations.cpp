@@ -1,7 +1,6 @@
 #include <iostream>
-#include "../../../include/ll.h"
 
-using namespace std;
+#include "../../../include/ll.h"
 
 void llOperations(node** head)
 {
@@ -9,25 +8,25 @@ void llOperations(node** head)
 
 	do
 	{
-		cout << "\n1. Insert a new value" << endl;
-		cout << "2. Insert at Head" << endl;
-		cout << "3. Delete the Head of the list"<< endl;
-		cout << "4. Print the Linked List" << endl;
-		cout << "5. Exit" << endl;
-		cout << "Enter your choice: ";
-		cin >> choice;
-		cout << endl;
+		std::cout << "\n1. Insert a new value( sorted )" << std::endl;
+		std::cout << "2. Insert at Head" << std::endl;
+		std::cout << "3. Delete the Head of the list"<< std::endl;
+		std::cout << "4. Print the Linked List" << std::endl;
+		std::cout << "5. Exit" << std::endl;
+		std::cout << "Enter your choice: ";
+		std::cin >> choice;
+		std::cout << std::endl;
 
 		switch (choice)
 		{
 			case 1:
-				cout << "Enter the value to insert: ";
-				cin >> value;
+				std::cout << "Enter the value to insert: ";
+				std::cin >> value;
 				insertSorted(head, value);
 				break;
 			case 2:
-				cout << "Enter the value to insert: ";
-				cin >> value;
+				std::cout << "Enter the value to insert: ";
+				std::cin >> value;
 				insertHead(head, value);
 				break;
 			case 3:
@@ -37,11 +36,11 @@ void llOperations(node** head)
 				printLL(*head);
 				break;
 			case 5:
-				cout << "Thank you!\nExiting...\n";
+				std::cout << "Thank you!\nExiting...\n";
 				exit(0);
 				break;
 			default:
-				cout << "Invalid choice, please try again.\n";
+				std::cout << "Invalid choice, please try again.\n";
 		}
 	} while (choice != 5);
 }

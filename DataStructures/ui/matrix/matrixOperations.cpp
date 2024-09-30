@@ -1,19 +1,16 @@
 #include <iostream>
 
-#include "../../../include/mat.h"
+#include "../../../include/matrix.h"
 #include "../../../include/ui.h"
-
-
-using namespace std;
 
 void matrixOperations(Matrix A, Matrix B, Matrix C) {
 
     printTitleSep("Matrix Operations");
-    cout << "\n1. Matrix Addition\n2. Matrix Subtraction\n3. Exit" << endl;
+    std::cout << "\n1. Matrix Addition\n2. Matrix Subtraction\n3. Exit" << std::endl;
 
     int choice = 0;
-    cout << "Enter your choice: ";
-    cin >> choice;
+    std::cout << "Enter your choice: ";
+    std::cin >> choice;
 
     switch (choice) {
         case 1: {
@@ -25,9 +22,8 @@ void matrixOperations(Matrix A, Matrix B, Matrix C) {
             break;
         }
         case 3: {
-            cout << "Thank you!"<< endl;
+            std::cout << "Thank you!"<< std::endl;
             exit(0);
-            break;
         }
     }
 
