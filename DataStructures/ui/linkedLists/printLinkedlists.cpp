@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "../../../include/ll.h"
+#include "ll.h"
 
 void printLL(node* head)
 {
-	node* ptr = head;
+	const node* ptr = head;
 	while (ptr != nullptr)
 	{
 		std::cout<< ptr -> number << " -> ";

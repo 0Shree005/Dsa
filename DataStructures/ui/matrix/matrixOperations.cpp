@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "../../../include/matrix.h"
-#include "../../../include/ui.h"
+#include "matrix.h"
+#include "ui.h"
 
 void matrixOperations(Matrix A, Matrix B, Matrix C) {
 

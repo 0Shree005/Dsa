@@ -4,9 +4,8 @@
 #include <iomanip>
 #include <cmath>
 
-#include "../../../../include/arrays.h"
-#include "../../../../include/ui.h"
-
+#include "arrays.h"
+#include "ui.h"
 
 void PrintAlgoTable(const std::vector<std::pair<std::string, double>> &timings);
 

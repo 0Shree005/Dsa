@@ -1,6 +1,6 @@
 #include <ctime>
 
-#include "../../../include/ui.h"
+#include "ui.h"
 
 std::vector<int> generateRandomElements(int size) {
     std::vector<int> elements;

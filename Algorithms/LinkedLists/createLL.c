@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "../../include/ll.h"
+#include "ll.h"
 
 void createLL(node** head)
 {

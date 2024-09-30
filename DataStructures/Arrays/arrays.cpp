@@ -2,7 +2,7 @@
 #include <limits>
 #include <algorithm>
 
-#include "../../include/ui.h"
+#include "ui.h"
 
 const int MAX_ELEMENTS =  25000000;
 

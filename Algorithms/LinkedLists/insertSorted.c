@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../../include/ll.h"
+#include "ll.h"
 
 void insertSorted(node** head, int value){
 	node* n = malloc(sizeof(node));

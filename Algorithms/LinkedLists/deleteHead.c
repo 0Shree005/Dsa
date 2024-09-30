@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "../../include/ll.h"
+#include "ll.h"
 
 void deleteHead(node** head) {
 	struct node* temp = *head;

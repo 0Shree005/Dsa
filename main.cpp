@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "include/dataStructs.h"
-#include "include/ui.h"
+#include "dataStructs.h"
+#include "ui.h"
 
 int main(){
 

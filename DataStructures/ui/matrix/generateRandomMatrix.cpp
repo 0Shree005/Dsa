@@ -1,6 +1,6 @@
 #include <ctime>
 
-#include "../../../include/matrix.h"
+#include "matrix.h"
 
 Matrix generateRandomMatrix(int rows, int cols) {
     Matrix mat;

@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../../../../include/ui.h"
+#include "ui.h"
 
 int* userInputArray(int MAX_ELEMENTS, int& size) {
     if (size == 0) {

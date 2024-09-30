@@ -1,4 +1,4 @@
-#include "../../../include/matrix.h"
+#include "matrix.h"
 
 void addMatrix(Matrix A, Matrix B, Matrix C) {
 	for (int i = 0; i < A.rows; i++) {

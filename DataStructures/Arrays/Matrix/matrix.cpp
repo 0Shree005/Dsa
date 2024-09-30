@@ -2,7 +2,7 @@
 #include <ctime>
 #include <iomanip>
 
-#include "../../../include/matrix.h"
+#include "matrix.h"
 
 void freeMatrix(Matrix mat);
 void printMatrix(const std::string& label, Matrix mat);

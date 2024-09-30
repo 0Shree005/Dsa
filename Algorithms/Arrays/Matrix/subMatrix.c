@@ -1,4 +1,4 @@
-#include "../../../include/matrix.h"
+#include "matrix.h"
 
 void subMatrix(Matrix A, Matrix B, Matrix C) {
 
