@@ -11,7 +11,7 @@ typedef struct node
     struct node* next;
 } node;
 
-void printLL(node* head);
+void printLL(node** head);
 
 #ifdef __cplusplus
 	extern "C" {
@@ -22,6 +22,7 @@ void printLL(node* head);
 	void insertSorted(node** head, int value);
 	void deleteHead(node** head);
 	void insertHead(node** head, int value);
+	void freeLL(node** head);
 
 	#ifdef __cplusplus
 }

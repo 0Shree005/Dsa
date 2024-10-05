@@ -33,9 +33,10 @@ void llOperations(node** head)
 				deleteHead(head);
 				break;
 			case 4:
-				printLL(*head);
+				printLL(head);
 				break;
 			case 5:
+				freeLL(head);
 				std::cout << "Thank you!\nExiting...\n";
 				exit(0);
 				break;

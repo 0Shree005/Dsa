@@ -38,6 +38,9 @@ void merge(int arr[], int left, int mid, int right){
         j++;
         k++;
     }
+
+    free(L);
+    free(R);
 }
 
 void mergeSort(int arr[], int left, int right){

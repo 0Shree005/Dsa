@@ -1,12 +1,8 @@
-#include <iostream>
-
 #include "ll.h"
-
-void createLL(node** head);
 
 void linkedLists()
 {
-	node* head = NULL;
+	node* head = nullptr;
 
 	createLL(&head);
 

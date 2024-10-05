@@ -7,14 +7,14 @@ Matrix generateRandomMatrix(int rows, int cols) {
     mat.rows = rows;
     mat.cols = cols;
     mat.data = static_cast<int**>(malloc(rows * sizeof(int*)));
-    if (mat.data == NULL) {
+    if (mat.data == nullptr) {
         perror("Failed to allocate memory for matrix rows");
         exit(EXIT_FAILURE);
     }
 
     for (int i = 0; i < rows; i++) {
         mat.data[i] = static_cast<int*>(malloc(cols * sizeof(int)));
-        if (mat.data[i] == NULL) {
+        if (mat.data[i] == nullptr) {
             perror("Failed to allocate memory for matrix rows");
             exit(EXIT_FAILURE);
         }
