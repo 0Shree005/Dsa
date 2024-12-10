@@ -7,11 +7,11 @@
 #include "arrays.h"
 #include "ui.h"
 
-void PrintAlgoTable(const std::vector<std::pair<std::string, double>> &timings);
+void PrintAlgoTable(const std::vector<std::tuple<std::string, double, int>> &timings);
 
 void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
 
-    std::vector<std::pair<std::string, double>> timings;
+    std::vector<std::tuple<std::string, double, int>> timings;
 
     int* originalArray = new int[size];
     std::copy(cArr, cArr + size, originalArray);
@@ -20,6 +20,7 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
 
         int* tempArray = new int[size];
         std::copy(originalArray, originalArray + size, tempArray);
+        int count = 0;
 
         if (choice == 2 || choice == 3) {
             if (size > 50000) {
@@ -37,28 +38,28 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
             case 1: {
                 printSmallSep("Merge sort is currently sorting...");
                 mergeSort(tempArray, 0, size - 1);
-                timings.push_back({"Merge Sort", 0.0});
+                timings.push_back({"Merge Sort", 0.0, count});
                 printSmallSep("Merge sort executed");
                 break;
             }
             case 2: {
                 printSmallSep("Selection sort is currently sorting...");
-                selectionSort(tempArray, size, iterations);
-                timings.push_back({"Selection Sort", 0.0});
+                selectionSort(tempArray, size, count);
+                timings.push_back({"Selection Sort", 0.0, count});
                 printSmallSep("Selection sort executed");
                 break;
             }
             case 3:{
                 printSmallSep("Bubble sort is currently sorting...");
                 bubbleSort(tempArray, size);
-                timings.push_back({"Bubble Sort", 0.0});
+                timings.push_back({"Bubble Sort", 0.0, count});
                 printSmallSep("Bubble Sort executed");
                 break;
             }
             case 4: {
                 printSmallSep("Insertion sort is currently sorting...");
                 insertionSort(tempArray, size);
-                timings.push_back({"Insertion Sort", 0.0});
+                timings.push_back({"Insertion Sort", 0.0, count});
                 printSmallSep("Insertion Sort executed");
                 break;
             }
@@ -123,14 +124,14 @@ void execSearchingAlgos(int* cArr, int size, const std::vector<int>& selections,
     PrintAlgoTable(timings);
 }
 
-void PrintAlgoTable(const std::vector<std::pair<std::string, double>> &timings) {
+void PrintAlgoTable(const std::vector<std::tuple<std::string, double, int>> &timings) {
     std::cout << "\n_sr no.__|____Algorithm____|__time taken_\n";
     int srNo = 1;
     for (const auto& timing : timings) {
         std::cout << std::setw(6) << srNo++ << "   |  "
-             << std::setw(14) << timing.first << " | ";
+             << std::setw(14) << get<0>(timing) << " | ";
 
-            double timeTaken = timing.second;
+            double timeTaken = get<1>(timing);
 
             if (timeTaken < 1e-6){
                 std::cout << std::fixed << std::setprecision(3) << timeTaken * 1e9 << " nanoseconds\n";
