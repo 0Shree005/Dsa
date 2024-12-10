@@ -43,7 +43,7 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
             }
             case 2: {
                 printSmallSep("Selection sort is currently sorting...");
-                selectionSort(tempArray, size);
+                selectionSort(tempArray, size, iterations);
                 timings.push_back({"Selection Sort", 0.0});
                 printSmallSep("Selection sort executed");
                 break;
