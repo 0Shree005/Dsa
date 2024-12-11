@@ -10,10 +10,10 @@ extern "C" {
 	 */
 	int binarySearch(int arr[], int size, int target);
 	int linearSearch(int arr[], int size, int userInput);
-	void mergeSort(int arr[], int left, int right);
-	void selectionSort(int arr[], int size);
-	void bubbleSort(int* arr, int size);
-	void insertionSort(int arr[], int size);
+	int mergeSort(int arr[], int left, int right, int *count);
+	int selectionSort(int arr[], int size, int count);
+	int bubbleSort(int* arr, int size, int count);
+	int insertionSort(int arr[], int size, int count);
 
 	#ifdef __cplusplus
 }

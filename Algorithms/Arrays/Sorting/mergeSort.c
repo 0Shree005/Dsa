@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 void merge(int arr[], int left, int mid, int right){
@@ -43,12 +44,20 @@ void merge(int arr[], int left, int mid, int right){
     free(R);
 }
 
-void mergeSort(int arr[], int left, int right){
+int mergeSort(int arr[], int left, int right, int *count){
+    if (arr == NULL || count == NULL) {
+        fprintf(stderr, "Null pointer passed to mergeSort\n");
+        return -1; // Indicate error
+    }
     if (left < right){
+        (*count)++;
         int mid = left + ((right - left ) / 2);
 
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
+        printf("Sorting left=%d, mid=%d, right=%d\n", left, mid, right);
+
+        mergeSort(arr, left, mid, count);
+        mergeSort(arr, mid + 1, right, count);
         merge(arr, left, mid, right);
     }
+    return *count;
 }

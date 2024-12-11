@@ -1,4 +1,4 @@
-int binarySearch(int arr[], int size, int userInput)
+int binarySearch(int arr[], int size, int userInput, int count)
 {
     int start = 0;
     int end = size - 1;
@@ -6,6 +6,7 @@ int binarySearch(int arr[], int size, int userInput)
     while (start <= end)
     {
         int mid = start + ((end - start) / 2);
+        count++;
 
         if (userInput == arr[mid])
         {
@@ -21,5 +22,6 @@ int binarySearch(int arr[], int size, int userInput)
         }
     }
 
+    /*return ( count, -1 );*/
     return -1;
 }

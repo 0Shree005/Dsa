@@ -3,15 +3,25 @@
 #include <chrono>
 #include <iomanip>
 #include <cmath>
+#include <string>
 
 #include "arrays.h"
 #include "ui.h"
 
-void PrintAlgoTable(const std::vector<std::tuple<std::string, double, int>> &timings);
+struct AlgoTableShiz {
+    std::string name;
+    double timetaken;
+    int iterations;
+};
+
+
+
+void PrintAlgoTableTEST(const std::vector<std::pair<std::string, double>> &timings);
+void PrintAlgoTable(const std::vector<AlgoTableShiz> &timings);
 
 void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
 
-    std::vector<std::tuple<std::string, double, int>> timings;
+    std::vector<AlgoTableShiz> timings;
 
     int* originalArray = new int[size];
     std::copy(cArr, cArr + size, originalArray);
@@ -35,39 +45,36 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
         auto start = std::chrono::high_resolution_clock::now();
 
         switch (choice) {
+
             case 1: {
                 printSmallSep("Merge sort is currently sorting...");
-                mergeSort(tempArray, 0, size - 1);
-                timings.push_back({"Merge Sort", 0.0, count});
+                int *mergeCounter = 0;
+                int itr = mergeSort(tempArray, 0, size - 1, mergeCounter);
+                timings.push_back({"Merge Sort", 0.0, itr});
                 printSmallSep("Merge sort executed");
                 break;
-            }
-            case 2: {
+            } case 2: {
                 printSmallSep("Selection sort is currently sorting...");
-                selectionSort(tempArray, size, count);
-                timings.push_back({"Selection Sort", 0.0, count});
+                int itr = selectionSort(tempArray, size, count);
+                timings.push_back({"Selection Sort", 0.0, itr});
                 printSmallSep("Selection sort executed");
                 break;
-            }
-            case 3:{
+            } case 3:{
                 printSmallSep("Bubble sort is currently sorting...");
-                bubbleSort(tempArray, size);
-                timings.push_back({"Bubble Sort", 0.0, count});
+                int itr = bubbleSort(tempArray, size, count);
+                timings.push_back({"Bubble Sort", 0.0, itr});
                 printSmallSep("Bubble Sort executed");
                 break;
-            }
-            case 4: {
+            } case 4: {
                 printSmallSep("Insertion sort is currently sorting...");
-                insertionSort(tempArray, size);
-                timings.push_back({"Insertion Sort", 0.0, count});
+                int itr = insertionSort(tempArray, size, count);
+                timings.push_back({"Insertion Sort", 0.0, itr});
                 printSmallSep("Insertion Sort executed");
                 break;
-            }
-            case 5: {
+            } case 5: {
                 std::cout << "\nExiting..." << std::endl;
                 exit(0);
-            }
-            default: {
+            } default: {
                 std::cout << "\nInvalid selection: " << choice << "\n";
                 break;
             }
@@ -75,7 +82,7 @@ void execSortingAlgos(int* cArr, int size, const std::vector<int>& selections) {
 
         auto end = std::chrono::high_resolution_clock::now();
         double timeTaken = std::chrono::duration<double>(end - start).count();
-        timings.back().second = timeTaken;
+        timings.back().timetaken = timeTaken;
 
         std::copy(tempArray, tempArray + size, cArr);
 
@@ -121,17 +128,48 @@ void execSearchingAlgos(int* cArr, int size, const std::vector<int>& selections,
     timings.back().second = timeTaken;
 
     }
-    PrintAlgoTable(timings);
+    PrintAlgoTableTEST(timings);
+    /*PrintAlgoTable(timings);*/
 }
 
-void PrintAlgoTable(const std::vector<std::tuple<std::string, double, int>> &timings) {
+void PrintAlgoTable(const std::vector<AlgoTableShiz> &timings){
+/*void PrintAlgoTable(const std::vector<std::tuple<std::string, double, int>> &timings) {*/
+    std::cout << "\n_sr no.__|____Algorithm____|___Iterations___|____time taken____\n";
+    int srNo = 1;
+    for (const auto& timing : timings) {
+        std::cout << std::setw(6) << srNo++ << "   |  " << std::setw(14) << timing.name << " | " << std::setw(14) << timing.iterations << " | ";
+
+            double timeTaken = timing.timetaken;
+
+            if (timeTaken < 1e-6){
+                /*std::cout << std::fixed << std::setprecision(3) << timeTaken * 1e9 << " nanoseconds\n";*/
+            } else if (timeTaken < 1e-3) {
+                std::cout << std::fixed << std::setprecision(3) << timeTaken * 1e3 << " microseconds\n";
+            } else if (timeTaken < 1.0) {
+                std::cout << std::fixed << std::setprecision(3) << timeTaken * 1e3 << " milliseconds\n";
+            } else if (timeTaken < 60.0) {
+                std::cout << std::fixed << std::setprecision(6) << timeTaken << " seconds\n";
+            } else {
+                int minutes = static_cast<int>(timeTaken / 60);
+                double seconds = fmod(timeTaken, 60.0);
+                std::cout << minutes << " minutes and " << std::fixed << std::setprecision(6) << seconds << " seconds\n";
+            }
+        /*std::cout << std::setw(6) << srNo++ << "   |  " << std::setw(14) << timing.name << " | " << finalTime;*/
+    }
+    std::cout << std::endl;
+}
+
+
+
+
+void PrintAlgoTableTEST(const std::vector<std::pair<std::string, double>> &timings) {
     std::cout << "\n_sr no.__|____Algorithm____|__time taken_\n";
     int srNo = 1;
     for (const auto& timing : timings) {
         std::cout << std::setw(6) << srNo++ << "   |  "
-             << std::setw(14) << get<0>(timing) << " | ";
+             << std::setw(14) << timing.first << " | ";
 
-            double timeTaken = get<1>(timing);
+            double timeTaken = timing.second;
 
             if (timeTaken < 1e-6){
                 std::cout << std::fixed << std::setprecision(3) << timeTaken * 1e9 << " nanoseconds\n";
