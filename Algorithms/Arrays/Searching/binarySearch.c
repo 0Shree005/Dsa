@@ -1,4 +1,5 @@
-int binarySearch(int arr[], int size, int userInput, int count)
+#include <stdio.h>
+int binarySearch(int arr[], int size, int userInput, int *count)
 {
     int start = 0;
     int end = size - 1;
@@ -6,7 +7,8 @@ int binarySearch(int arr[], int size, int userInput, int count)
     while (start <= end)
     {
         int mid = start + ((end - start) / 2);
-        count++;
+        (*count)++;
+		/*printf("count incremented");*/
 
         if (userInput == arr[mid])
         {
